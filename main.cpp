@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     test.bitOn(10);
     test.bitOn(11);
     cout<<test[10]<<endl;
-    cout<<test[7]<<endl;
+    cout<<test[11]<<endl;
     test.print();
 
     return 0;

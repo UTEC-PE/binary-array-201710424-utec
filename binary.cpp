@@ -26,8 +26,9 @@ class boolean {
         }
 
         bool operator[](int position) {
-          this->array[position/8] &= 1 << (position%8);
-          if (this->array[position/8] == 0) {
+          char sector = this->array[position/8];
+          sector &= 1 << (position%8);
+          if (sector == 0) {
             return false;
           } else return true;
         }
