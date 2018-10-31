@@ -1,24 +1,22 @@
 #include <iostream>
 #include "binary.cpp"
 
-using namespace std;
-
 int main(int argc, char *argv[]) {
-    cout << "===========================================================" << endl;
-    cout << "Binary Array Practice" << endl;
-    cout << "===========================================================" << endl << endl;
+    std::cout << "===========================================================" << '\n';
+    std::cout << "Binary Array Practice" << '\n';
+    std::cout << "===========================================================" << "\n\n";
 
-    boolean test(24);
+    boolean test(16);
     test.bitOn(7);
-    cout<<test[7]<<endl;
-    cout<<test[7]<<endl;
+    std::cout << test[7] << '\n';
+    std::cout << test[7] << '\n';
     test.print();
     test.bitOff(7);
-    cout<<test[7]<<endl;
+    std::cout << test[7] << '\n';
     test.bitOn(10);
     test.bitOn(11);
-    cout<<test[10]<<endl;
-    cout<<test[11]<<endl;
+    std::cout << test[10] << '\n';
+    std::cout << test[11] << '\n';
     test.print();
 
     return 0;
