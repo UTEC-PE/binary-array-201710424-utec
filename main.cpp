@@ -8,16 +8,18 @@ int main(int argc, char *argv[]) {
     cout << "Binary Array Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    boolean xd(16);
-    xd.bitOn(7);
-    cout<<endl<<xd[7]<<endl;
-    //xd.print();
-    xd.bitOff(7);
-    cout<<endl<<xd[7]<<endl;
-    xd.bitOn(10);
-    xd.bitOn(11);
-    cout<<endl<<xd[10]<<endl;
-    //xd.print();
+    boolean test(24);
+    test.bitOn(7);
+    cout<<test[7]<<endl;
+    cout<<test[7]<<endl;
+    test.print();
+    test.bitOff(7);
+    cout<<test[7]<<endl;
+    test.bitOn(10);
+    test.bitOn(11);
+    cout<<test[10]<<endl;
+    cout<<test[7]<<endl;
+    test.print();
 
     return 0;
 }
