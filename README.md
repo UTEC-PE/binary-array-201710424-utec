@@ -6,6 +6,6 @@ Estimado profesor si bien la fecha del último commit sobre la rama master se re
 
 ### La razón de la modificación de README.md
 
-La razón por la cual se modifico el archivo README.md fue con la intención de hacerle saber que una optimización de esta tarea junto con una ampliación para poder trabajar con templates y adaptar cualquier tipo de variable para almacenar booleanos.
+La razón por la cual se modifico el archivo README.md fue con la intención de hacerle saber que una optimización de esta tarea junto con una ampliación para poder trabajar con templates y adaptar cualquier tipo de variable para almacenar booleanos; se viene implementando en la rama develop. Así mismo, también me gustaría pedirle que la pueda revisar. 
 
 ### Gracias
