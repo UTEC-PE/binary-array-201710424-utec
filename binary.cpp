@@ -3,46 +3,45 @@
 
 #include <iostream>
 
+template <class T>
 class boolean {
     private:
-        char* array;
-        int size;
+        T* array;
+        int numberContainers;
+        int sizeContainer = sizeof(T) * 8;
 
     public:
-        boolean(int size) {
-          this->size = (size-1)/8+1;
-          this->array = new char[this->size];
-          for (size_t i = 0; i < this->size; i++) {
-            this->array[i] = 0;
+        boolean(int boolsNeed) {
+          this->numberContainers = (boolsNeed-1)/this->sizeContainer+1;
+          this->array = new T[this->numberContainers];
+          for (size_t i = 0; i < this->numberContainers; i++) {
+            this->array[i] &= (T) 0<<(this->sizeContainer-1);
           }
         }
 
         void bitOn(int position) {
-          this->array[position / 8] |= 1<<(7-position%8);
+          this->array[position / this->sizeContainer] |= (T) 1 <<((this->sizeContainer-1)-position%this->sizeContainer);
         }
 
         void bitOff(int position) {
-          this->array[position / 8] &= ~(1<<(7-position%8));
+          this->array[position / this->sizeContainer] &= ~( (T) 1<<((this->sizeContainer-1)-position%this->sizeContainer));
         }
 
         bool operator[](int position) {
-          char sector = this->array[position/8];
-          sector &= 1 << (7-position%8);
-          if (sector == 0) {
-            return false;
-          } else return true;
+          bool bit = (this->array[position/this->sizeContainer] >> ((this->sizeContainer-1)-position%this->sizeContainer)) & 1U;
+          return bit;
         }
 
         void clear() {
-          for (size_t i = 0; i < this->size/8+1; i++) {
-            this->array[i] = 0;
+          for (size_t i = 0; i < this->numberContainers; i++) {
+            this->array[i] &= (T) 0<<(this->sizeContainer-1);
           }
         }
 
         void print() {
-          for (size_t i = 0; i < this->size; i++) {
-            for (size_t j = 0; j < 8; j++) {
-              std::cout << (*this)[i*8+j];
+          for (size_t i = 0; i < this->numberContainers; i++) {
+            for (size_t j = 0; j < this->sizeContainer; j++) {
+              std::cout << (*this)[i*this->sizeContainer+j];
             }
             std::cout << ' ';
           }

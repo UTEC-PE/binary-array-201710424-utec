@@ -6,7 +6,8 @@ int main(int argc, char *argv[]) {
     std::cout << "Binary Array Practice" << '\n';
     std::cout << "===========================================================" << "\n\n";
 
-    boolean test(16);
+    boolean <char> test(16);
+    test.print();
     test.bitOn(7);
     std::cout << test[7] << '\n';
     std::cout << test[7] << '\n';
@@ -17,6 +18,8 @@ int main(int argc, char *argv[]) {
     test.bitOn(11);
     std::cout << test[10] << '\n';
     std::cout << test[11] << '\n';
+    test.print();
+    test.clear();
     test.print();
 
     return 0;
